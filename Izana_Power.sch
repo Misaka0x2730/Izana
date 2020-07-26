@@ -1,5 +1,5 @@
 EESchema Schematic File Version 5
-EELAYER 33 0
+EELAYER 34 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -64,11 +64,13 @@ Connection ~ 8750 4050
 Connection ~ 8350 4750
 Connection ~ 10250 4750
 Connection ~ 9850 4050
-Connection ~ 9500 3550
 Connection ~ 8450 3550
 Connection ~ 8750 4500
 Connection ~ 10450 3550
 Connection ~ 9850 4500
+Connection ~ 4300 5475
+Connection ~ 9225 3550
+Connection ~ 9700 3550
 NoConn ~ 3600 3600
 NoConn ~ 2600 3900
 Wire Wire Line
@@ -201,6 +203,8 @@ Wire Wire Line
 	4300 1450 4300 1300
 Wire Wire Line
 	4300 1750 4300 1850
+Wire Wire Line
+	4300 5375 4300 5475
 Wire Wire Line
 	4300 5475 4500 5475
 Wire Wire Line
@@ -412,7 +416,7 @@ Wire Wire Line
 Wire Wire Line
 	9050 3550 8950 3550
 Wire Wire Line
-	9050 3550 9500 3550
+	9050 3550 9225 3550
 Wire Wire Line
 	9050 3650 9050 3550
 Wire Wire Line
@@ -420,9 +424,15 @@ Wire Wire Line
 Wire Wire Line
 	9050 4050 8750 4050
 Wire Wire Line
-	9500 3450 9500 3550
+	9225 3450 9225 3550
 Wire Wire Line
-	9500 3550 9850 3550
+	9225 3550 9700 3550
+Wire Wire Line
+	9300 5150 9300 5250
+Wire Wire Line
+	9700 3450 9700 3550
+Wire Wire Line
+	9700 3550 9850 3550
 Wire Wire Line
 	9750 950  9850 950 
 Wire Wire Line
@@ -498,6 +508,39 @@ USB_5V
 Text HLabel 10625 950  2    50   Input ~ 0
 POE_5V
 $Comp
+L power:PWR_FLAG #FLG0107
+U 1 1 5EAFED2F
+P 4300 5375
+F 0 "#FLG0107" H 4300 5450 50  0001 C CNN
+F 1 "PWR_FLAG" H 4300 5545 50  0000 C CNN
+F 2 "" H 4300 5375 50  0001 C CNN
+F 3 "~" H 4300 5375 50  0001 C CNN
+	1    4300 5375
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0108
+U 1 1 5EB09293
+P 9225 3450
+F 0 "#FLG0108" H 9225 3525 50  0001 C CNN
+F 1 "PWR_FLAG" H 9225 3620 50  0000 C CNN
+F 2 "" H 9225 3450 50  0001 C CNN
+F 3 "~" H 9225 3450 50  0001 C CNN
+	1    9225 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0104
+U 1 1 5EADD933
+P 9300 5150
+F 0 "#FLG0104" H 9300 5225 50  0001 C CNN
+F 1 "PWR_FLAG" H 9300 5320 50  0000 C CNN
+F 2 "" H 9300 5150 50  0001 C CNN
+F 3 "~" H 9300 5150 50  0001 C CNN
+	1    9300 5150
+	1    0    0    -1  
+$EndComp
+$Comp
 L power:+5V #PWR036
 U 1 1 5F00DFF9
 P 2600 5875
@@ -522,12 +565,12 @@ $EndComp
 $Comp
 L power:+5V #PWR049
 U 1 1 5E7DB689
-P 9500 3450
-F 0 "#PWR049" H 9500 3300 50  0001 C CNN
-F 1 "+5V" H 9515 3623 50  0000 C CNN
-F 2 "" H 9500 3450 50  0001 C CNN
-F 3 "" H 9500 3450 50  0001 C CNN
-	1    9500 3450
+P 9700 3450
+F 0 "#PWR049" H 9700 3300 50  0001 C CNN
+F 1 "+5V" H 9715 3623 50  0000 C CNN
+F 2 "" H 9700 3450 50  0001 C CNN
+F 3 "" H 9700 3450 50  0001 C CNN
+	1    9700 3450
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -706,6 +749,17 @@ F 1 "GND" H 8755 4877 50  0000 C CNN
 F 2 "" H 8750 5050 50  0001 C CNN
 F 3 "" H 8750 5050 50  0001 C CNN
 	1    8750 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0207
+U 1 1 5EADF5B6
+P 9300 5250
+F 0 "#PWR0207" H 9300 5000 50  0001 C CNN
+F 1 "GND" H 9305 5077 50  0000 C CNN
+F 2 "" H 9300 5250 50  0001 C CNN
+F 3 "" H 9300 5250 50  0001 C CNN
+	1    9300 5250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1283,28 +1337,28 @@ F 4 "SSBRD81045T4G" H 7400 1700 50  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L Transistor_FET:IRF7324 Q2
-U 2 1 5E7DB66D
-P 8750 3650
-F 0 "Q2" V 9078 3650 50  0000 C CNN
-F 1 "IRF7314" V 8987 3650 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8950 3575 50  0001 L CNN
-F 3 "https://www.infineon.com/dgdl/irf7314pbf.pdf?fileId=5546d462533600a4015355f57b901b2c" H 8750 3650 50  0001 L CNN
-F 4 "IRF7314TRPBF" H 8750 3650 50  0001 C CNN "Part Number"
-	2    8750 3650
-	0    -1   -1   0   
+L Regulator_Controller:Si3402-B U4
+U 1 1 5EBC3984
+P 3100 2800
+F 0 "U4" H 3100 1525 50  0000 C CNN
+F 1 "Si3402-B" H 3100 1434 50  0000 C CNN
+F 2 "Package_DFN_QFN:SiliconLabs_QFN-20-6+6+4+4_1EP_5x5mm_P0.8mm_EP2.75x2.75mm_ThermalVias" H 3100 2800 50  0001 C CNN
+F 3 "https://www.silabs.com/documents/public/data-sheets/Si3402-B.pdf" H 3100 2800 50  0001 C CNN
+F 4 "SI3402-B-GMR" H 3100 2800 50  0001 C CNN "Part Number"
+	1    3100 2800
+	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_FET:IRF7324 Q2
-U 1 1 5E7DB667
-P 10150 3650
-F 0 "Q2" V 10475 3650 50  0000 C CNN
-F 1 "IRF7314" V 10390 3650 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 10350 3575 50  0001 L CNN
-F 3 "https://www.infineon.com/dgdl/irf7314pbf.pdf?fileId=5546d462533600a4015355f57b901b2c" H 10150 3650 50  0001 L CNN
-F 4 "IRF7314TRPBF" H 10150 3650 50  0001 C CNN "Part Number"
-	1    10150 3650
-	0    1    -1   0   
+L Transformer:Transformer_Coilcraft_FA-2672 T1
+U 1 1 5EC1DD15
+P 6050 2000
+F 0 "T1" H 6050 1750 50  0000 C CNN
+F 1 "Transformer_Coilcraft_FA-2672" H 6050 2300 50  0000 C CNN
+F 2 "Transformer_SMD:Transformer_Coilcraft_FA2672" H 6050 2000 50  0001 C CNN
+F 3 "~" H 6050 2000 50  0001 C CNN
+F 4 "FA2672-ALB	" H 6050 2000 50  0001 C CNN "Part Number"
+	1    6050 2000
+	1    0    0    1   
 $EndComp
 $Comp
 L Device:Q_NMOS_GSD Q1
@@ -1319,6 +1373,18 @@ F 4 "IRLML2502TRPBF" H 8650 4750 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
+L Transistor_FET:IRF7324 Q2
+U 2 1 5E7DB66D
+P 8750 3650
+F 0 "Q2" V 9078 3650 50  0000 C CNN
+F 1 "IRF7314" V 8987 3650 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8950 3575 50  0001 L CNN
+F 3 "https://www.infineon.com/dgdl/irf7314pbf.pdf?fileId=5546d462533600a4015355f57b901b2c" H 8750 3650 50  0001 L CNN
+F 4 "IRF7314TRPBF" H 8750 3650 50  0001 C CNN "Part Number"
+	2    8750 3650
+	0    -1   -1   0   
+$EndComp
+$Comp
 L Device:Q_NMOS_GSD Q3
 U 1 1 5EFA7A1E
 P 9950 4750
@@ -1329,6 +1395,18 @@ F 3 "~" H 9950 4750 50  0001 C CNN
 F 4 "IRLML2502TRPBF" H 9950 4750 50  0001 C CNN "Part Number"
 	1    9950 4750
 	-1   0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:IRF7324 Q2
+U 1 1 5E7DB667
+P 10150 3650
+F 0 "Q2" V 10475 3650 50  0000 C CNN
+F 1 "IRF7314" V 10390 3650 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 10350 3575 50  0001 L CNN
+F 3 "https://www.infineon.com/dgdl/irf7314pbf.pdf?fileId=5546d462533600a4015355f57b901b2c" H 10150 3650 50  0001 L CNN
+F 4 "IRF7314TRPBF" H 10150 3650 50  0001 C CNN "Part Number"
+	1    10150 3650
+	0    1    -1   0   
 $EndComp
 $Comp
 L Isolator:VO615A-3 U6
@@ -1352,30 +1430,6 @@ F 2 "Package_TO_SOT_SMD:SOT-23-5" H 3300 5725 50  0001 L CIN
 F 3 "http://www.ti.com/lit/ds/symlink/tlv62568.pdf" H 3000 6425 50  0001 C CNN
 F 4 "TLV62568DBVT" H 3250 5975 50  0001 C CNN "Part Number"
 	1    3250 5975
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transformer:Transformer_Coilcraft_FA-2672 T1
-U 1 1 5EC1DD15
-P 6050 2000
-F 0 "T1" H 6050 1750 50  0000 C CNN
-F 1 "Transformer_Coilcraft_FA-2672" H 6050 2300 50  0000 C CNN
-F 2 "Transformer_SMD:Transformer_Coilcraft_FA2672" H 6050 2000 50  0001 C CNN
-F 3 "~" H 6050 2000 50  0001 C CNN
-F 4 "FA2672-ALB	" H 6050 2000 50  0001 C CNN "Part Number"
-	1    6050 2000
-	1    0    0    1   
-$EndComp
-$Comp
-L Regulator_Controller:Si3402-B U4
-U 1 1 5EBC3984
-P 3100 2800
-F 0 "U4" H 3100 1525 50  0000 C CNN
-F 1 "Si3402-B" H 3100 1434 50  0000 C CNN
-F 2 "Package_DFN_QFN:SiliconLabs_QFN-20-6+6+4+4_1EP_5x5mm_P0.8mm_EP2.75x2.75mm_ThermalVias" H 3100 2800 50  0001 C CNN
-F 3 "https://www.silabs.com/documents/public/data-sheets/Si3402-B.pdf" H 3100 2800 50  0001 C CNN
-F 4 "SI3402-B-GMR" H 3100 2800 50  0001 C CNN "Part Number"
-	1    3100 2800
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

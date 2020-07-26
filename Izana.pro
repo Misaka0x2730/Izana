@@ -1,4 +1,4 @@
-update=Вт 14 апр 2020 19:31:42
+update=Чт 25 июн 2020 22:49:42
 version=1
 last_client=kicad
 [general]
@@ -12,8 +12,6 @@ NetIExt=net
 version=1
 LibDir=
 [eeschema/libraries]
-[LibeditFrame]
-version=1
 [schematic_editor]
 version=1
 PageLayoutDescrFile=/media/misaka10032/Files/Development/Hardware/kicad/DmitryRezvanov_CERN_OHL.kicad_wks
@@ -35,18 +33,13 @@ ERC_CheckBusDriverConflicts=1
 ERC_CheckBusEntryConflicts=1
 ERC_CheckBusToBusConflicts=1
 ERC_CheckBusToNetConflicts=1
-[SchematicFrame]
-version=1
 [PcbFrame]
 version=1
-[sheetnames]
-1=00000000-0000-0000-0000-00005e94c605:
-2=00000000-0000-0000-0000-00005e79b6e2:Izana_Input_Interface
-3=00000000-0000-0000-0000-00005eec66a9:Izana_Power
-4=00000000-0000-0000-0000-00005e75114d:Izana_Target_1_Iso
-5=00000000-0000-0000-0000-00005ed62fbf:Izana_MCU
-6=00000000-0000-0000-0000-00005e845b62:Izana_Target_2
 [ModEditFrame]
+version=1
+[SchematicFrame]
+version=1
+[LibeditFrame]
 version=1
 [pcbnew]
 version=1
@@ -114,9 +107,9 @@ OthersTextUpright=0
 DimensionUnits=0
 DimensionPrecision=1
 SolderMaskClearance=0.05
-SolderMaskMinWidth=0.2
+SolderMaskMinWidth=0.05
 SolderPasteClearance=0
-SolderPasteRatio=0
+SolderPasteRatio=-0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
 Type=0
@@ -375,3 +368,10 @@ dPairViaGap=0.25
 [text_variables]
 1=Prepreg:JLC7628
 2=Thickness:1.2 mm
+[sheetnames]
+1=00000000-0000-0000-0000-00005f007cbe:
+2=00000000-0000-0000-0000-00005e79b6e2:Izana_Input_Interface
+3=00000000-0000-0000-0000-00005eec66a9:Izana_Power
+4=00000000-0000-0000-0000-00005e75114d:Izana_Target_1_Iso
+5=00000000-0000-0000-0000-00005ed62fbf:Izana_MCU
+6=00000000-0000-0000-0000-00005e845b62:Izana_Target_2
